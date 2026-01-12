@@ -1,0 +1,217 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --success-color: #22c55e;
+    --danger-color: #ef4444;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 40px 20px;
+    line-height: 1.5;
+}
+
+.container {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: -0.025em;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+.upload-section {
+    margin-bottom: 40px;
+    text-align: center;
+    background: #f1f5f9;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    transition: all 0.2s;
+}
+
+.upload-section:hover {
+    border-color: var(--primary-color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+input[type="file"] {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+input[type="file"]::file-selector-button {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-right: 15px;
+    transition: all 0.2s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #f8fafc;
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    width: 100%;
+    max-width: 200px;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-hover);
+}
+
+.flashes {
+    list-style: none;
+    padding: 12px;
+    background-color: #fee2e2;
+    color: var(--danger-color);
+    border-radius: 6px;
+    margin-top: 15px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.file-list {
+    list-style: none;
+    padding: 0;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.file-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+}
+
+.filename {
+    font-weight: 500;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+    flex: 1;
+}
+
+.filename::before {
+    content: "📄";
+    font-size: 1.2rem;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.view {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.view:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.download {
+    background-color: #f1f5f9;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.download:hover {
+    background-color: var(--border-color);
+}
+
+.delete {
+    background-color: transparent;
+    color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.delete:hover {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+@media (max-width: 640px) {
+    .file-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .actions {
+        width: 100%;
+    }
+    .btn {
+        flex: 1;
+        text-align: center;
+    }
+}
